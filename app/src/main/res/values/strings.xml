@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="actionbar_name">Petagram     </string>
+    <string name="Rating">5</string>
+    <string name="acction_ver_favoritos">Favoritos</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acercade">Acerca de</string>
+    <string name="et_nombre">Nombre</string>
+    <string name="et_email">Email</string>
+    <string name="et_comentario">Comentario</string>
+    <string name="btn_enviarcomentario">Enviar Comentario</string>
+    <string name="pnombre">Nombre</string>
+    <string name="pemail">Email</string>
+    <string name="pcomentario">Comentario</string>
+    <string name="nombre_mascota_perfil">Connor</string>
+    <string name="mi_biografia">Hola soy Lucia, estudié Ingeniería en Sistemas Computacionales, hace
+                                algunos años y ahora estoy tomando este curso para actualizarme.
+                                Saludos a Todos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

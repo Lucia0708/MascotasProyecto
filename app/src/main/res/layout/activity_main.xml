@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lucia.mascotasproyecto.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+            >
+            <ImageView
+                android:id ="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dog_footprint_26"
+                />
+
+            <TextView
+                android:id = "@+id/titulo_actionbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=
+                    "@string/actionbar_name"
+                android:textColor="@color/primary_text"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/margen_horizontal_toolbar"
+                />
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!--   <include android:id="@+id/miActionBar"
+           layout="@layout/actionbar"
+           ></include>-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+    </android.support.v4.view.ViewPager>
+
+
+       <!-- FAB -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="@dimen/size_fab"
+            android:layout_height="@dimen/size_fab"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/slr_large_lens_26"
+            app:elevation="@dimen/fab_elevation"
+            android:layout_gravity="bottom"
+            android:paddingBottom="0dp"
+
+            />
+</android.support.design.widget.CoordinatorLayout>

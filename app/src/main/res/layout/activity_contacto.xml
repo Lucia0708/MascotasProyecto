@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lucia.mascotasproyecto.menuactivity.ContactoActivity"
+    android:orientation="vertical"
+
+    >
+
+       <include android:id="@+id/miActionBar"
+           layout="@layout/actionbar"
+           ></include>
+
+       <TextView
+           android:id="@+id/titulocontacto"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/menu_contacto"
+           android:layout_gravity="center"
+           android:textSize="@dimen/et_tamaño"
+           android:textStyle="bold"
+           android:paddingTop="@dimen/padding_top_titulos"
+           />
+
+       <android.support.design.widget.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <android.support.design.widget.TextInputEditText
+               android:id="@+id/et_Nombre"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/et_nombre"
+               android:textSize="@dimen/et_tamaño"
+               android:textStyle="bold"
+               />
+
+       </android.support.design.widget.TextInputLayout>
+
+       <android.support.design.widget.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <android.support.design.widget.TextInputEditText
+               android:id="@+id/et_Email"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/et_email"
+               android:textSize="@dimen/et_tamaño"
+               android:textStyle="bold" />
+
+       </android.support.design.widget.TextInputLayout>
+
+       <android.support.design.widget.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <android.support.design.widget.TextInputEditText
+               android:id="@+id/et_Comentario"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/et_comentario"
+               android:textSize="@dimen/et_tamaño"
+               android:textStyle="bold" />
+
+       </android.support.design.widget.TextInputLayout>
+
+       <Button
+           android:id="@+id/btn_EnviarComentario"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="EnviarComentario"
+           android:gravity="bottom"
+           android:text="@string/btn_enviarcomentario"
+           android:textSize="@dimen/et_tamaño"
+           android:textStyle="bold"
+           android:textAlignment="center"
+
+           />
+   </LinearLayout>

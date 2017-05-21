@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_vertical_margin">5dp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="TextSize_card_view">30dp</dimen>
+    <dimen name="size_foto_mascota">250dp</dimen>
+    <dimen name="size_foto_mascota_perfil">90dp</dimen>
+    <dimen name="size_iconos_hueso">38dp</dimen>
+    <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="size_fab">50dp</dimen>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="margen_horizontal_toolbar">40dp</dimen>
+    <dimen name="et_tamaño">15dp</dimen>
+    <dimen name="padding_top_titulos">20dp</dimen>
+</resources>
