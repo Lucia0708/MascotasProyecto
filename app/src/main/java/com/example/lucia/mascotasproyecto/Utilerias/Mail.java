@@ -176,6 +176,7 @@ public class Mail extends javax.mail.Authenticator {
         this._user = _user;
     }
 
+
     public String get_pass() {
         return _pass;
     }

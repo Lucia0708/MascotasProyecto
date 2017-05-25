@@ -40,6 +40,7 @@ public class PerfilFragment extends Fragment {
         //  return super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_perfil, container, false);
 
+
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
 
         GridLayoutManager glm = new GridLayoutManager(getActivity(),3);

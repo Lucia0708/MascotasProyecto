@@ -6,7 +6,7 @@
     <dimen name="TextSize_card_view">30sp</dimen>
     <dimen name="size_foto_mascota">250sp</dimen>
     <dimen name="size_foto_mascota_perfil">90sp</dimen>
-    <dimen name="size_iconos_hueso">38sp</dimen>
+    <dimen name="size_iconos_hueso">38dp</dimen>
     <dimen name="elevacion_actionbar">4sp</dimen>
     <dimen name="size_fab">50sp</dimen>
     <dimen name="fab_margin">8sp</dimen>
