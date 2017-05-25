@@ -1,72 +1,116 @@
 package com.example.lucia.mascotasproyecto.menuactivity;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lucia.mascotasproyecto.MainActivity;
 import com.example.lucia.mascotasproyecto.R;
+import com.example.lucia.mascotasproyecto.Utilerias.Mail;
 
-public class ContactoActivity extends AppCompatActivity {
+import javax.mail.AuthenticationFailedException;
+import javax.mail.MessagingException;
 
-    private TextView tvNombre;
-    private TextView tvEmail;
-    private TextView tvComentario;
+public class ContactoActivity extends AppCompatActivity  implements View.OnClickListener{
+
+    private TextInputEditText tiNombre;
+    private TextInputEditText tiEmail;
+    private TextInputEditText tiComentario;
+    private Button btnEnviarComentario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
-
+        // obtener el action bar
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
+
+        //habiliatar la navegacion de regreso al padre
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tiNombre = (TextInputEditText)findViewById(R.id.et_Nombre);
+        tiEmail = (TextInputEditText)findViewById(R.id.et_Email);
+        tiComentario = (TextInputEditText)findViewById(R.id.et_Comentario);
+
+        btnEnviarComentario = (Button) findViewById(R.id.btn_EnviarComentario);
+        btnEnviarComentario.setOnClickListener(this);
+
     }
 
-    public void EnviarComentario(View view){
-
-           Toast.makeText(ContactoActivity.this, "Enviar Comentario", Toast.LENGTH_SHORT).show();
-
-/*            String email = tvEmail.getText().toString();
-            Intent emailIntent = new Intent((Intent.ACTION_SEND));
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
-            emailIntent.setType("message/rfc822");
-            startActivity(Intent.createChooser(emailIntent, "Email "));
-*/
+    @Override
+    public void onClick(View v) {
+        int viewId = v.getId();
+        switch (viewId) {
+            case R.id.btn_EnviarComentario:
+                EnviarComentario();
+                break;
 
 
-/*        String dat_nombre;
-        String dat_email;
-        String dat_comentario;
-
-
-        //https://github.com/steveholt55/JavaMail-API-Android.git
-
-        Intent intent = new Intent(ContactoActivity.this, email.class);
-
-        TextInputEditText textInputEditText1 = (TextInputEditText) findViewById(R.id.et_Nombre);
-        TextInputEditText textInputEditText3 = (TextInputEditText) findViewById(R.id.et_Email);
-        TextInputEditText textInputEditText4 = (TextInputEditText) findViewById(R.id.et_Comentario);
-
-        dat_nombre = textInputEditText1.getText().toString();
-        dat_email = textInputEditText3.getText().toString();
-        dat_comentario = textInputEditText4.getText().toString();
-
-        intent.putExtra(getResources().getString(R.string.pnombre), dat_nombre);
-        intent.putExtra(getResources().getString(R.string.pemail), dat_email);
-        intent.putExtra(getResources().getString(R.string.pcomentario), dat_comentario);
-
-// utilize esta llamada de startActivity porque asegura un canal y nos manda una respuesta de resultado.
-
-
-        startActivityForResult(intent);
-        */
+        }
     }
+
+    public void EnviarComentario(){
+
+            String[] recipients = { tiEmail.getText().toString() };
+            SendEmailAsyncTask email = new SendEmailAsyncTask();
+            email.activity = this;
+            email.m = new Mail(null);
+            email.m.set_from("no-reply@nodomain.com");
+            email.m.setBody(tiComentario.getText().toString());
+            email.m.set_to(recipients);
+            email.m.set_subject(tiNombre.getText().toString());
+            email.execute();
+
+        }
+
+    public void displayMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    class SendEmailAsyncTask extends AsyncTask<Void, Void, Boolean> {
+        Mail m;
+        ContactoActivity activity;
+
+        public SendEmailAsyncTask() {
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                m.send();
+                return true;
+            } catch (AuthenticationFailedException e) {
+                activity.displayMessage(e.getMessage());
+                return false;
+            } catch (MessagingException e) {
+                activity.displayMessage(e.getMessage());
+                return false;
+            } catch (Exception e) {
+                activity.displayMessage(e.getMessage());
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            if(aBoolean){
+                activity.displayMessage("Mensaje enviado!");
+                //Limpiar los campos dado que el mensaje se envio satisfactoriamente
+                tiNombre.setText("");
+                tiEmail.setText("");
+                tiComentario.setText("");
+
+            }else{
+                activity.displayMessage("Error de envio :(");
+            }
+        }
+    }
+
 
 }
