@@ -7,20 +7,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.lucia.mascotasproyecto.adapter.MascotaAdaptador;
+import com.example.lucia.mascotasproyecto.MascotasFavoritas.MascotasFavoritas;
 import com.example.lucia.mascotasproyecto.adapter.PageAdapter;
 import com.example.lucia.mascotasproyecto.fragments.PerfilFragment;
 import com.example.lucia.mascotasproyecto.fragments.lista_mascotas_fragment;
 import com.example.lucia.mascotasproyecto.menuactivity.AcercadeActivity;
 import com.example.lucia.mascotasproyecto.menuactivity.ContactoActivity;
-import com.example.lucia.mascotasproyecto.pojo.Mascota;
 
 import java.util.ArrayList;
 

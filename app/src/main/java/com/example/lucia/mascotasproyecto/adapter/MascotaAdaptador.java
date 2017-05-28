@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lucia.mascotasproyecto.db.ConstructorMascotas;
 import com.example.lucia.mascotasproyecto.pojo.Mascota;
 import com.example.lucia.mascotasproyecto.R;
 
@@ -40,7 +41,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvNombrecv.setText(mascota.getNombre());
-        mascotaViewHolder.tvraitingcv.setText(mascota.getRaiting());
+        mascotaViewHolder.tvraitingcv.setText(String.valueOf(mascota.getRaiting()));
 
 
 
@@ -49,20 +50,17 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
             public void onClick(View v) {
                 int i;
                 //   Toast.makeText(activity, "Diste like a " + mascota.getNombre() + mascota.getRaiting(), Toast.LENGTH_SHORT).show();
-                i = Integer.parseInt(mascota.getRaiting());
-                i = i + 1;
-                mascota.setRaiting(String.valueOf(i));
-                mascotaViewHolder.tvraitingcv.setText(mascota.getRaiting());
+
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+                mascotaViewHolder.tvraitingcv.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
             }
         });
 
         mascotaViewHolder.btnMuestraRaiting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tvmuestraRaiting;
-                int i;
-                i = Integer.parseInt(mascota.getRaiting());
-                mascotaViewHolder.tvraitingcv.setText(mascota.getRaiting());
+             mascotaViewHolder.tvraitingcv.setText(String.valueOf(mascota.getRaiting()));
             }
         });
 
