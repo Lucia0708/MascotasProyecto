@@ -27,6 +27,7 @@ public class ConstructorMascotas {
         BaseDatos db = new BaseDatos(context);
        insertarOchoMascotas(db);
         return db.obtenerTodasLasMascotas();
+
   }
 
         public void insertarOchoMascotas(BaseDatos db) {
