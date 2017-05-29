@@ -41,9 +41,9 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvNombrecv.setText(mascota.getNombre());
-        mascotaViewHolder.tvraitingcv.setText(String.valueOf(mascota.getRaiting()));
 
-
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+        mascotaViewHolder.tvraitingcv.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
 
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,8 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
         mascotaViewHolder.btnMuestraRaiting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             mascotaViewHolder.tvraitingcv.setText(String.valueOf(mascota.getRaiting()));
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+             mascotaViewHolder.tvraitingcv.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
             }
         });
 
