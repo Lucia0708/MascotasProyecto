@@ -29,21 +29,42 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".menuactivity.ContactoActivity"
+        <activity
+            android:name=".menuactivity.ContactoActivity"
             android:parentActivityName=".MainActivity">
-        <!-- Soporte para versiones 4.0 o menos -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
 
-            android:value=".MainActivity" />
-        </activity>
-
-        <activity android:name=".menuactivity.AcercadeActivity"
-            android:parentActivityName=".MainActivity">
             <!-- Soporte para versiones 4.0 o menos -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".menuactivity.AcercadeActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Instagram.ConfigurarCueInstagramActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Instagram.PerfilCuentaInstagramActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+            </activity>
     </application>
+
 </manifest>

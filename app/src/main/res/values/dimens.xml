@@ -14,4 +14,7 @@
     <dimen name="margen_horizontal_toolbar">40sp</dimen>
     <dimen name="et_tamaño">15sp</dimen>
     <dimen name="padding_top_titulos">20sp</dimen>
+    <dimen name="padding_top_textview">400sp</dimen>
+    <dimen name="tvmargen_izq">15sp</dimen>
+    <dimen name="tvmargen_der">25sp</dimen>
 </resources>

@@ -5,6 +5,8 @@
     <string name="acction_ver_favoritos">Favoritos</string>
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acercade">Acerca de</string>
+    <string name="menu_configurarcuentaIns">Configurar cuenta de Instagram</string>
+    <string name="menu_usuariosinstagram">Usuarios de Instagram</string>
     <string name="et_nombre">Nombre</string>
     <string name="et_email">Email</string>
     <string name="et_comentario">Comentario</string>
@@ -16,6 +18,17 @@
     <string name="mi_biografia">Hola soy Lucia, estudié Ingeniería en Sistemas Computacionales, hace
                                 algunos años y ahora estoy tomando este curso para actualizarme.
                                 Saludos a Todos</string>
+    <string name="et_usuario">Escribe tu usuario</string>
+    <string name="btn_guardarcuenta">Guardar Cuenta</string>
+
+    <string name="pUsername">perritoconnor</string>
+    <string name="pIdUsername">5538249605</string>
+
+    <string name="oreothemightycat">oreothemightycat</string>
+    <string name="belliccat">belliccat</string>
+    <string name="perritoconnor">perritoconnor</string>
+    <string name="rufitomurciagonzalez">rufitomurciagonzalez</string>
+    <string name="zach_dog_24">zach_dog_24</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -40,14 +40,23 @@ public class BaseDatos extends SQLiteOpenHelper{
                 "REFERENCES " + ConstantesBaseDatos.TABLE_MASCOTAS + "(" + ConstantesBaseDatos.TABLE_MASCOTAS_ID + ")" +
                 ")";
 
+        String queryCrearTablaUserInstagram = "CREATE TABLE " + ConstantesBaseDatos.TABLE_USER_INSTAGRAM + "(" +
+                ConstantesBaseDatos.TABLE_USER_INSTAGRAM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ConstantesBaseDatos.TABLE_USER_INSTAGRAM_NOMBRE + " TEXT " +
+                ")";
+
+
         db.execSQL(queryCrearTablaMascota);
         db.execSQL(queryCrearTablaLikesMascota);
+        db.execSQL(queryCrearTablaUserInstagram);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXIST" + ConstantesBaseDatos.TABLE_MASCOTAS);
         db.execSQL("DROP TABLE IF EXIST" + ConstantesBaseDatos.TABLE_LIKES_MASCOTAS);
+        db.execSQL("DROP TABLE IF EXIST" + ConstantesBaseDatos.TABLE_USER_INSTAGRAM);
         onCreate(db);
     }
     public ArrayList<Mascota> obtenerTodasLasMascotas(){
@@ -141,5 +150,10 @@ public class BaseDatos extends SQLiteOpenHelper{
         return mascotas;
     }
 
+    public void insertarUserInstagram(ContentValues contentValues){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(ConstantesBaseDatos.TABLE_USER_INSTAGRAM, null, contentValues);
+        db.close();
+    }
 
 }

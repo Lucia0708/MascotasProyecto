@@ -12,9 +12,44 @@
         ></item>
 
     <item
+        android:id="@+id/mConfigurarCuentaInstagram"
+        android:title="@string/menu_configurarcuentaIns"
+        android:orderInCategory="102"
+        ></item>
+    <item
+        android:id="@+id/mperritoconnor"
+        android:title="@string/perritoconnor"
+        android:orderInCategory="103"
+        ></item>
+
+    <item
+        android:id="@+id/mbelliccat"
+        android:title="@string/belliccat"
+        android:orderInCategory="104"
+        ></item>
+
+    <item
+        android:id="@+id/moreothemightycat"
+        android:title="@string/oreothemightycat"
+        android:orderInCategory="105"
+        ></item>
+
+    <item
+        android:id="@+id/mrufitomurciagonzalez"
+        android:title="@string/rufitomurciagonzalez"
+        android:orderInCategory="106"
+        ></item>
+
+    <item
+        android:id="@+id/mzach_dog_24"
+        android:title="@string/zach_dog_24"
+        android:orderInCategory="107"
+        ></item>
+
+    <item
         android:id="@+id/ibfavoritos"
         android:title="@string/acction_ver_favoritos"
-        android:orderInCategory="102"
+        android:orderInCategory="108"
         app:showAsAction="always"
         android:icon="@drawable/star_hotel_48"
         ></item>

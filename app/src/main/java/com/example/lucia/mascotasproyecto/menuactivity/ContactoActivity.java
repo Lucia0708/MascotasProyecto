@@ -50,10 +50,7 @@ public class ContactoActivity extends AppCompatActivity  implements View.OnClick
             case R.id.btn_EnviarComentario:
                 EnviarComentario();
                 break;
-
-
-
-        }
+    }
     }
 
     public void EnviarComentario(){
