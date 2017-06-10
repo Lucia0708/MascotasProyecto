@@ -20,6 +20,8 @@ public class ConstructorUserInstagram {
     public ConstructorUserInstagram(Context context)
     {
         this.context = context;
+
+
     }
 
     public ArrayList<MascotaInstagram> obtenerDatos(){
