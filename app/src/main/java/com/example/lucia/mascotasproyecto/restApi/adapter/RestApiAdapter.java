@@ -3,6 +3,7 @@ package com.example.lucia.mascotasproyecto.restApi.adapter;
 import com.example.lucia.mascotasproyecto.restApi.ConstantesRestApi;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.IdbyUserDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.MascotaDeserializador;
+import com.example.lucia.mascotasproyecto.restApi.Deserializador.followsSelfDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.EndpointsApi;
 import com.example.lucia.mascotasproyecto.restApi.model.MascotaResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.UserInstagramResponse;
@@ -35,11 +36,19 @@ public Gson construyeGsonDeserializadorMediaRecent(){
     return gsonBuilder.create();
 }
 
-    public Gson construyeGsonDeserializadorIdbyUsername(){
+    public Gson construyeGsonDeserializadorIdbyUsername() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(UserInstagramResponse.class, new IdbyUserDeserializador());
 
         return gsonBuilder.create();
+    }
+
+    public Gson construyeGsonDeserializadorfollwsself(){
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(MascotaResponse.class, new followsSelfDeserializador());
+
+        return gsonBuilder.create();
+
     }
 
 

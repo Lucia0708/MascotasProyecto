@@ -6,7 +6,7 @@
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acercade">Acerca de</string>
     <string name="menu_configurarcuentaIns">Configurar cuenta de Instagram</string>
-    <string name="menu_usuariosinstagram">Usuarios de Instagram</string>
+    <string name="menu_timelineinstagram">TimeLine de Instagram</string>
     <string name="et_nombre">Nombre</string>
     <string name="et_email">Email</string>
     <string name="et_comentario">Comentario</string>
@@ -32,4 +32,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre_explicacion">En el menu opciones econtraras: la opcion del TimeLine y la de Configurar cuenta.
+    En TimeLine si das clik en la foto te muestra el perfil Instagram. En configurar cuenta puedes poner el nombre del Usuario y tambien
+        veras su perfil.
+        perritoconnor es mi perfil SELF.  Gracias</string>
 </resources>

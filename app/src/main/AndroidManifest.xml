@@ -64,7 +64,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-            </activity>
+        </activity>
+        <activity
+            android:name=".Instagram.TimeLineActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

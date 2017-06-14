@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.example.lucia.mascotasproyecto.Instagram.ConfigurarCueInstagramActivity;
 import com.example.lucia.mascotasproyecto.Instagram.PerfilCuentaInstagramActivity;
+import com.example.lucia.mascotasproyecto.Instagram.TimeLineActivity;
 import com.example.lucia.mascotasproyecto.MascotasFavoritas.MascotasFavoritas;
 import com.example.lucia.mascotasproyecto.adapter.PageAdapter;
 import com.example.lucia.mascotasproyecto.fragments.PerfilFragment;
@@ -66,35 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(this, AcercadeActivity.class);
                 startActivity(i);
                 break;
+            case R.id.mTimelineInstagram:
+                Intent intentTimeLine = new Intent(this, TimeLineActivity.class);
+                startActivity(intentTimeLine);
+                break;
             case R.id.mConfigurarCuentaInstagram:
                 Intent intentConfigurarCuentaInstagram = new Intent(this, ConfigurarCueInstagramActivity.class);
                 startActivity(intentConfigurarCuentaInstagram);
                 break;
-            case R.id.mbelliccat:
-                Intent i1 = new Intent(this, PerfilCuentaInstagramActivity.class);
-                i1.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.belliccat));
-                startActivity(i1);
-                break;
-            case R.id.moreothemightycat:
-                Intent i2 = new Intent(this, PerfilCuentaInstagramActivity.class);
-                i2.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.oreothemightycat));
-                startActivity(i2);
-                break;
-            case R.id.mperritoconnor:
+                  case R.id.mperritoconnor:
                 Intent i3 = new Intent(this, PerfilCuentaInstagramActivity.class);
                 i3.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.perritoconnor));
+                MainActivity.USERNAME=getResources().getString(R.string.perritoconnor);
                 startActivity(i3);
                 break;
-            case R.id.mzach_dog_24:
-                Intent i4 = new Intent(this, PerfilCuentaInstagramActivity.class);
-                i4.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.zach_dog_24));
-                startActivity(i4);
-                break;
-            case R.id.mrufitomurciagonzalez:
-                Intent i5 = new Intent(this, PerfilCuentaInstagramActivity.class);
-                i5.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.rufitomurciagonzalez));
-                startActivity(i5);
-                break;
+
             case R.id.ibfavoritos:
                 Intent fav = new Intent(MainActivity.this,MascotasFavoritas.class);
                 startActivity(fav);

@@ -1,5 +1,7 @@
 package com.example.lucia.mascotasproyecto.restApi;
 
+import java.security.PublicKey;
+
 /**
  * Created by Lucia on 07/06/2017.
  */
@@ -38,7 +40,10 @@ public final class ConstantesRestApi {
 
     // Se arma cuando se tenga el USERNAME
 
+    //https://api.instagram.com/v1/users/self/follows?access_token=ACCESS-TOKEN
 
+    public static final String KEY1_GET_FOLLOWS_SELF    = "users/self/follows";
+    public static final String KEY2_GET_FOLLOWS_SELF    = KEY1_GET_FOLLOWS_SELF + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
 
 }

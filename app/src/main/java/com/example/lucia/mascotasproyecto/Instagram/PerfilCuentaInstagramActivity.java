@@ -48,7 +48,7 @@ public class PerfilCuentaInstagramActivity extends AppCompatActivity implements 
 
         Bundle parametros = getIntent().getExtras();
 
-        MainActivity.USERNAME = parametros.getString(getResources().getString(R.string.pUsername));
+     //   MainActivity.USERNAME = parametros.getString(getResources().getString(R.string.pUsername));
       //  MainActivity.IDUSERNAME = parametros.getString(getResources().getString(R.string.pIdUsername));
 
         ivImagenPerfilInst = (ImageView) findViewById(R.id.ivImagenPerfilInst);

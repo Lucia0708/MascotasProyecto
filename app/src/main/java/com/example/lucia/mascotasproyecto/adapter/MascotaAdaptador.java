@@ -1,6 +1,7 @@
 package com.example.lucia.mascotasproyecto.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lucia.mascotasproyecto.MascotasFavoritas.MascotasFavoritas;
 import com.example.lucia.mascotasproyecto.db.ConstructorMascotas;
 import com.example.lucia.mascotasproyecto.pojo.Mascota;
 import com.example.lucia.mascotasproyecto.R;
@@ -71,7 +73,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
         //        Intent intent = new Intent(activity, MascotasFavoritas.class );
         //         intent.putExtra("foto", mascota.getFoto());
         //        intent.putExtra ("nombre", mascota.getNombre());
-        //       intent.putExtra("raiting", mascota.getRaiting());
+         //      intent.putExtra("raiting", mascota.getRaiting());
         //      activity.startActivity(intent);
         //            }
         //      });
