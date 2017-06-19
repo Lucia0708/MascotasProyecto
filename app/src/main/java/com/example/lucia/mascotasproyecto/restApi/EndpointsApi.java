@@ -30,7 +30,7 @@ public interface EndpointsApi {
     @GET
     public Call<UserInstagramResponse> getIdbyUsername(@Url String url);
 
-    // Para obtener los Folows de este usuaior
+    // Para obtener los FolLows de este usuario
     //https://api.instagram.com/v1/users/self/follows?access_token=ACCESS-TOKEN
 
     @GET (ConstantesRestApi.KEY2_GET_FOLLOWS_SELF)

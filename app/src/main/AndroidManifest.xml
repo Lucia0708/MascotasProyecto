@@ -58,12 +58,12 @@
         </activity>
         <activity
             android:name=".Instagram.PerfilCuentaInstagramActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Instagram.TimeLineActivity">
 
             <!-- Soporte para versiones 4.0 o menos -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Instagram.TimeLineActivity" />
         </activity>
         <activity
             android:name=".Instagram.TimeLineActivity"

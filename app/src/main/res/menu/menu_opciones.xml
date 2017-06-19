@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/mContacto"
-        android:title="@string/menu_contacto"
-        android:orderInCategory="100"></item>
-    <item
-        android:id="@+id/mAcercade"
-        android:title="@string/menu_acercade"
-        android:orderInCategory="101"
-        ></item>
+
     <item
         android:id="@+id/mTimelineInstagram"
         android:title="@string/menu_timelineinstagram"
-        android:orderInCategory="102"
+        android:orderInCategory="100"
         ></item>
 
     <item
         android:id="@+id/mConfigurarCuentaInstagram"
         android:title="@string/menu_configurarcuentaIns"
-        android:orderInCategory="103"
+        android:orderInCategory="101"
         ></item>
     <item
         android:id="@+id/mperritoconnor"
         android:title="@string/perritoconnor"
+        android:orderInCategory="102"
+        ></item>
+
+    <item
+        android:id="@+id/mContacto"
+        android:title="@string/menu_contacto"
+        android:orderInCategory="103"></item>
+    <item
+        android:id="@+id/mAcercade"
+        android:title="@string/menu_acercade"
         android:orderInCategory="104"
         ></item>
+
 
     <item
         android:id="@+id/ibfavoritos"

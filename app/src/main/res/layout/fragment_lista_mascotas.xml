@@ -4,15 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvExplicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nombre_explicacion"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal"/>
-
-    <android.support.v7.widget.RecyclerView
+      <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMascotas"
         android:layout_width="match_parent"
 
