@@ -77,6 +77,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter <MascotaAdaptador.Mas
         //      activity.startActivity(intent);
         //            }
         //      });
+
     }
 
     @Override
