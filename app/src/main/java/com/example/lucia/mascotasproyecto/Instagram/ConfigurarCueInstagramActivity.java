@@ -50,7 +50,6 @@ public class ConfigurarCueInstagramActivity extends AppCompatActivity implements
 
                     Intent intentPerfilInstagram = new Intent(ConfigurarCueInstagramActivity.this,PerfilCuentaInstagramActivity.class);
                     intentPerfilInstagram.putExtra(getResources().getString(R.string.pUsername), tiUsuario.getText().toString());
-                    intentPerfilInstagram.putExtra(getResources().getString(R.string.pIdUsername), "5538249605");
                     MainActivity.USERNAME=tiUsuario.getText().toString();
                     startActivity(intentPerfilInstagram);
                     break;

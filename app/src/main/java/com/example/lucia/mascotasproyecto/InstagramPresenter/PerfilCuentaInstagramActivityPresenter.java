@@ -107,6 +107,7 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
                 UserInstagramResponse userInstagramResponse = response.body();
                 userInstagrams = userInstagramResponse.getUserInstagrams();
                 idUsername = userInstagrams.get(0).getId();
+                MainActivity.IDUSERNAME=idUsername;
                 obtenerMediosRecientesbyId(idUsername);
             }
             @Override

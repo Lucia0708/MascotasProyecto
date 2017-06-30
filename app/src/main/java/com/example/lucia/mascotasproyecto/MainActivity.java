@@ -1,13 +1,20 @@
 package com.example.lucia.mascotasproyecto;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +28,16 @@ import com.example.lucia.mascotasproyecto.fragments.PerfilFragment;
 import com.example.lucia.mascotasproyecto.fragments.lista_mascotas_fragment;
 import com.example.lucia.mascotasproyecto.menuactivity.AcercadeActivity;
 import com.example.lucia.mascotasproyecto.menuactivity.ContactoActivity;
+import com.example.lucia.mascotasproyecto.restApiFirebase.EndpointsFirebase;
+import com.example.lucia.mascotasproyecto.restApiFirebase.adapter.RestApiAdapterFirebase;
+import com.example.lucia.mascotasproyecto.restApiFirebase.model.UsuarioResponse;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     // Clase principal del Proyecto
@@ -75,12 +90,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentConfigurarCuentaInstagram = new Intent(this, ConfigurarCueInstagramActivity.class);
                 startActivity(intentConfigurarCuentaInstagram);
                 break;
-                  case R.id.mperritoconnor:
+            case R.id.mperritoconnor:
                 Intent i3 = new Intent(this, PerfilCuentaInstagramActivity.class);
                 i3.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.perritoconnor));
                 MainActivity.USERNAME=getResources().getString(R.string.perritoconnor);
                 startActivity(i3);
                 break;
+            case R.id.mNotificacion:
+                String token =  FirebaseInstanceId.getInstance().getToken();
+                String id_usuario_instagram = IDUSERNAME;
+                enviarTokenRegistro(token, id_usuario_instagram);
+            break;
 
             case R.id.ibfavoritos:
                 Intent fav = new Intent(MainActivity.this,MascotasFavoritas.class);
@@ -115,4 +135,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void enviarTokenRegistro(String token, String id_usuario_instagram){
+
+        Log.d("TOKEN", token);
+        Log.d("ID_USUARIO_INSTAGRAM", id_usuario_instagram);
+
+        RestApiAdapterFirebase restApiAdapterFirebase = new RestApiAdapterFirebase();
+        EndpointsFirebase endpointsFirebase = restApiAdapterFirebase.establecerConexionRestApi();
+        Call<UsuarioResponse> usuarioResponseCall = endpointsFirebase.registrarusuario(token, id_usuario_instagram);
+
+        usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                UsuarioResponse usuarioResponse = response.body();
+                Log.d("ID_FIREBASE", usuarioResponse.getId());
+                Log.d("TOKEN_FIREBASE", usuarioResponse.getId_dispositivo());
+                Log.d("ID_USUARIO_INSTAGRAM", usuarioResponse.getId_usuario_instagram());
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+
+
 }

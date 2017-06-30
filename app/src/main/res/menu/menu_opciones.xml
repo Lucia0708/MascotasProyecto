@@ -29,11 +29,17 @@
         android:orderInCategory="104"
         ></item>
 
+    <item
+        android:id="@+id/mNotificacion"
+        android:title="@string/menu_notificacion"
+        android:orderInCategory="105"
+        ></item>
+
 
     <item
         android:id="@+id/ibfavoritos"
         android:title="@string/acction_ver_favoritos"
-        android:orderInCategory="105"
+        android:orderInCategory="106"
         app:showAsAction="always"
         android:icon="@drawable/star_hotel_48"
         ></item>
