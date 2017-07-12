@@ -12,7 +12,7 @@
         android:id="@+id/ivImagenPerfil"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/connor"
+        android:src="@drawable/conoritoperfil"
         android:layout_gravity="center_horizontal"
         app:civ_border_color="#EEEEEE"
         app:civ_border_width="4dp"

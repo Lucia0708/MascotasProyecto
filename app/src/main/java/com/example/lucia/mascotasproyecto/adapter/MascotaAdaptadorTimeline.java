@@ -58,6 +58,7 @@ public class MascotaAdaptadorTimeline extends RecyclerView.Adapter <MascotaAdapt
             @Override
             public void onClick(View v) {
                 MainActivity.USERNAME = mascotaInstagram.getUsername();
+                MainActivity.ORIGEN = 1;
                 Intent intent = new Intent(activity, PerfilCuentaInstagramActivity.class );
                 activity.startActivity(intent);
                     }

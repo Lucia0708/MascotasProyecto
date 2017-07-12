@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.lucia.mascotasproyecto.Instagram.PerfilCuentaInstagramActivity;
 import com.example.lucia.mascotasproyecto.MainActivity;
 import com.example.lucia.mascotasproyecto.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -26,7 +27,14 @@ public class NotificationService extends FirebaseMessagingService {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
 
-        Intent i = new Intent(this, MainActivity.class);
+
+        int tam = remoteMessage.getNotification().getBody().length();
+        tam = tam - 15;
+    //    MainActivity.USERNAME = remoteMessage.getNotification().getBody().substring(0, tam);
+        MainActivity.USERNAME = MainActivity.CUENTA_INSTAGRAM;
+        MainActivity.ORIGEN = 1;
+
+        Intent i = new Intent(this, PerfilCuentaInstagramActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 

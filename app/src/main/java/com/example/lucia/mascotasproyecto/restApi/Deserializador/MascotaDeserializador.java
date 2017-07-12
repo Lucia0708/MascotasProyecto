@@ -40,6 +40,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse>{
             String nombreCompleto      = userJson.get(JsonKeys.USER_FULLNAME).getAsString();
             String url_perfil          = userJson.get(JsonKeys.MEDIA_URL_PERFIL).getAsString();
 
+            String id_image            = mascotaResponseDataObject.get(JsonKeys.ID_IMAGE).getAsString();
             JsonObject imageJson       = mascotaResponseDataObject.getAsJsonObject(JsonKeys.IMAGES);
             JsonObject stdResolutionJson = imageJson.getAsJsonObject(JsonKeys.MEDIA_STANDARD_RESOLUTION);
             String urlFoto              = stdResolutionJson.get(JsonKeys.MEDIA_URL).getAsString();
@@ -51,6 +52,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse>{
             mascotaInstagramActual.setId(id);
             mascotaInstagramActual.setUsername(nombreCompleto);
             mascotaInstagramActual.setUrlfotoperfil(url_perfil);
+            mascotaInstagramActual.setId_foto(id_image);
             mascotaInstagramActual.setUrlfoto(urlFoto);
             mascotaInstagramActual.setLikes(likes);
 

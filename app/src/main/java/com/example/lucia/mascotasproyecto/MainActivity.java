@@ -1,15 +1,9 @@
 package com.example.lucia.mascotasproyecto;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,8 +36,12 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     // Clase principal del Proyecto
 
-    public static String USERNAME = "";
+    public static String USERNAME = "perritoconnor";
     public static String IDUSERNAME = "";
+    public static String IDMEDIA = "";
+    public static int ORIGEN = 1;
+    public static String CUENTA_INSTAGRAM = "perritoconnor";
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i3 = new Intent(this, PerfilCuentaInstagramActivity.class);
                 i3.putExtra(getResources().getString(R.string.pUsername), getResources().getString(R.string.perritoconnor));
                 MainActivity.USERNAME=getResources().getString(R.string.perritoconnor);
+                MainActivity.ORIGEN = 1;
                 startActivity(i3);
                 break;
             case R.id.mNotificacion:

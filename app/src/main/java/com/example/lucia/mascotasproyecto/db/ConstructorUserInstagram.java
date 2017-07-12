@@ -28,15 +28,15 @@ public class ConstructorUserInstagram {
 
         ArrayList<MascotaInstagram> mascotasInstagram = new ArrayList<MascotaInstagram>();
 
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor1", " ", "Connor", 1));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor2", " ", "Bolita", 2));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor3", " ", "Bunny", 3));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor4"," ", "Paloma", 4));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor5"," ", "Shuly", 5));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor6"," ", "Shuly", 4));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor7"," ", "Shuly", 3));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor8"," ", "Shuly", 2));
-        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor9"," ", "Shuly", 1));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor1", " ", " ", "Connor", 1));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor2", " ", " ", "Bolita", 2));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor3", " ", " ", "Bunny", 3));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor4", " ", " ", "Paloma", 4));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor5", " ", " ", "Shuly", 5));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor6", " ", " ", "Shuly", 4));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor7", " ", " ", "Shuly", 3));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor8", " ", " ", "Shuly", 2));
+        mascotasInstagram.add(new MascotaInstagram("R.drawable.connor9", " ", " ", "Shuly", 1));
 
         return mascotasInstagram;
     }

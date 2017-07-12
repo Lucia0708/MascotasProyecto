@@ -1,14 +1,23 @@
 package com.example.lucia.mascotasproyecto.adapter;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lucia.mascotasproyecto.Instagram.IPerfilCuentaInstagramActivityView;
+import com.example.lucia.mascotasproyecto.Instagram.PerfilCuentaInstagramActivity;
+import com.example.lucia.mascotasproyecto.InstagramPresenter.IPerfilCuentaInstagramActivityPresentador;
+import com.example.lucia.mascotasproyecto.InstagramPresenter.PerfilCuentaInstagramActivityPresenter;
+import com.example.lucia.mascotasproyecto.MainActivity;
 import com.example.lucia.mascotasproyecto.R;
+import com.example.lucia.mascotasproyecto.db.ConstructorMascotas;
 import com.example.lucia.mascotasproyecto.pojo.MascotaInstagram;
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +31,7 @@ public class MascotaAdaptadorPerfilInstagram extends RecyclerView.Adapter<Mascot
 
     ArrayList<MascotaInstagram> mascotasInstagram;
     Activity activity;
+    private IPerfilCuentaInstagramActivityPresentador presenter;
 
     public MascotaAdaptadorPerfilInstagram(ArrayList<MascotaInstagram> mascotasInstagram, Activity activity){
         this.mascotasInstagram = mascotasInstagram;
@@ -49,6 +59,22 @@ public class MascotaAdaptadorPerfilInstagram extends RecyclerView.Adapter<Mascot
                 .into(mascotaViewHolder.imgFoto);
 
         mascotaViewHolder.tvraitingcv.setText(String.valueOf(mascotaInstagram.getLikes()));
+
+        mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i;
+                //   Toast.makeText(activity, "Diste like a " + mascota.getNombre() + mascota.getRaiting(), Toast.LENGTH_SHORT).show();
+
+
+                MainActivity.IDMEDIA = mascotaInstagram.getId_foto();
+                MainActivity.ORIGEN = 2;
+                Intent intent = new Intent(activity, PerfilCuentaInstagramActivity.class );
+                activity.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
@@ -59,11 +85,13 @@ public class MascotaAdaptadorPerfilInstagram extends RecyclerView.Adapter<Mascot
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgFoto;
         private TextView tvraitingcv;
+        private ImageButton btnLike;
 
         public MascotaViewHolder(View itemView) {
             super(itemView);
             imgFoto     = (ImageView) itemView.findViewById(R.id.imgMascotacv);
             tvraitingcv = (TextView) itemView.findViewById(R.id.tvTotRatingcv);
+            btnLike     = (ImageButton) itemView.findViewById(R.id.hueso_amarillocv);
         }
     }
 

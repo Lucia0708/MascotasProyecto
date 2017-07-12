@@ -1,11 +1,13 @@
 package com.example.lucia.mascotasproyecto.restApi;
 
 import com.example.lucia.mascotasproyecto.R;
+import com.example.lucia.mascotasproyecto.restApi.model.LikeResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.MascotaResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.UserInstagramResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Url;
 
@@ -35,5 +37,11 @@ public interface EndpointsApi {
 
     @GET (ConstantesRestApi.KEY2_GET_FOLLOWS_SELF)
     Call<MascotaResponse> getfollowsself();
+
+    // Para dar un dar LIKE a una media de INSTAGRAM mediante un POST
+    //https://api.instagram.com/v1/media/{media-id}/likes?access_token=ACCESS-TOKEN
+
+    @POST
+    public Call<LikeResponse> postlikeenmedia (@Url String url);
 
 }
