@@ -39,8 +39,17 @@ public class MainActivity extends AppCompatActivity {
     public static String USERNAME = "perritoconnor";
     public static String IDUSERNAME = "";
     public static String IDMEDIA = "";
+
+// Origen = 1 es para mostrar la media de una cuenta instagram por Username y
+// Origen = 2 es para insertan primero un like en la cuenta Instagram y luego muestra la media de la cuenta Instagram
+
     public static int ORIGEN = 1;
     public static String CUENTA_INSTAGRAM = "perritoconnor";
+
+    public static String CUENTA_EMISORA = "perritoconnor";
+    public static String CUENTA_RECEPTORA = "zach_dog_24";
+
+    public static String ACCION_PULSADA = "";
 
     private Toolbar toolbar;
     private TabLayout tabLayout;

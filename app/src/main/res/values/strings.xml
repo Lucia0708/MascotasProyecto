@@ -15,6 +15,7 @@
     <string name="pnombre">Nombre</string>
     <string name="pemail">Email</string>
     <string name="pcomentario">Comentario</string>
+    <string name="paccionwear">VER_PERFIL</string>
     <string name="nombre_mascota_perfil">Connor</string>
     <string name="mi_biografia">Hola soy Lucia, estudié Ingeniería en Sistemas Computacionales, hace
                                 algunos años y ahora estoy tomando este curso para actualizarme.
@@ -32,8 +33,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nombre_explicacion">En el menu opciones econtraras: la opcion del TimeLine y la de Configurar cuenta.
-    En TimeLine si das clik en la foto te muestra el perfil Instagram. En configurar cuenta puedes poner el nombre del Usuario y tambien
-        veras su perfil.
-        perritoconnor es mi perfil SELF.  Gracias</string>
+    <string name="texto_accion_ver_mi_perfil">Ver mi perfil</string>
+    <string name="texto_accion_follow_unfollow">Dar Follow/Unfollow</string>
+    <string name="texto_accion_ver_usuario">Ver Usuario que dio like</string>
 </resources>

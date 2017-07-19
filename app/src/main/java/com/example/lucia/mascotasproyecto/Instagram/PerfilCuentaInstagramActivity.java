@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lucia.mascotasproyecto.InstagramPresenter.IPerfilCuentaInstagramActivityPresentador;
 import com.example.lucia.mascotasproyecto.InstagramPresenter.PerfilCuentaInstagramActivityPresenter;
@@ -21,6 +22,8 @@ import com.example.lucia.mascotasproyecto.pojo.MascotaInstagram;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static com.example.lucia.mascotasproyecto.Notificaciones.NotificationService.ACCION_ENVIADA;
 
 public class PerfilCuentaInstagramActivity extends AppCompatActivity implements IPerfilCuentaInstagramActivityView {
 
@@ -47,6 +50,10 @@ public class PerfilCuentaInstagramActivity extends AppCompatActivity implements 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Bundle parametros = getIntent().getExtras();
+
+        String accion = parametros.getString(ACCION_ENVIADA);
+        MainActivity.ACCION_PULSADA = accion;
+
 
      //   MainActivity.USERNAME = parametros.getString(getResources().getString(R.string.pUsername));
       //  MainActivity.IDUSERNAME = parametros.getString(getResources().getString(R.string.pIdUsername));

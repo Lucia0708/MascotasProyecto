@@ -23,6 +23,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import static com.example.lucia.mascotasproyecto.MainActivity.ACCION_PULSADA;
+import static com.example.lucia.mascotasproyecto.Notificaciones.NotificationService.ACCION_ENVIADA;
+
 /**
  * Created by Lucia on 06/06/2017.
  */
@@ -70,6 +73,7 @@ public class MascotaAdaptadorPerfilInstagram extends RecyclerView.Adapter<Mascot
                 MainActivity.IDMEDIA = mascotaInstagram.getId_foto();
                 MainActivity.ORIGEN = 2;
                 Intent intent = new Intent(activity, PerfilCuentaInstagramActivity.class );
+                intent.putExtra(ACCION_ENVIADA, "VER_PERFIL");
                 activity.startActivity(intent);
             }
         });

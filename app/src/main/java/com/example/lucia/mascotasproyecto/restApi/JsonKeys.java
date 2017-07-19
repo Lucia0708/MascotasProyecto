@@ -28,5 +28,11 @@ public final class JsonKeys {
     public static final String  POST_DAR_LIKE_CODE           = "code";
 
 
+    public static final String  POST_FOLLOW_UNFOLLOW_DATA    = "data";
+    public static final String  POST_FOLLOW_UNFOLLOW         = "outgoing_status";
+
+
+
+
 
 }

@@ -19,6 +19,9 @@ import com.example.lucia.mascotasproyecto.db.ConstructorMascotas;
 import com.example.lucia.mascotasproyecto.db.ConstructorUserInstagram;
 import com.example.lucia.mascotasproyecto.pojo.UserInstagram;
 
+import static com.example.lucia.mascotasproyecto.MainActivity.ACCION_PULSADA;
+import static com.example.lucia.mascotasproyecto.Notificaciones.NotificationService.ACCION_ENVIADA;
+
 public class ConfigurarCueInstagramActivity extends AppCompatActivity implements View.OnClickListener {
     private TextInputEditText tiUsuario;
     private Button btnGuardarCuenta;
@@ -50,6 +53,7 @@ public class ConfigurarCueInstagramActivity extends AppCompatActivity implements
 
                     Intent intentPerfilInstagram = new Intent(ConfigurarCueInstagramActivity.this,PerfilCuentaInstagramActivity.class);
                     intentPerfilInstagram.putExtra(getResources().getString(R.string.pUsername), tiUsuario.getText().toString());
+                    intentPerfilInstagram.putExtra(ACCION_ENVIADA, "VER_PERFIL");
                     MainActivity.USERNAME=tiUsuario.getText().toString();
                     MainActivity.ORIGEN = 1;
                     startActivity(intentPerfilInstagram);

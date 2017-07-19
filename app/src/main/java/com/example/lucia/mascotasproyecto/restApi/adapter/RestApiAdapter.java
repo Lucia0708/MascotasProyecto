@@ -1,11 +1,13 @@
 package com.example.lucia.mascotasproyecto.restApi.adapter;
 
 import com.example.lucia.mascotasproyecto.restApi.ConstantesRestApi;
+import com.example.lucia.mascotasproyecto.restApi.Deserializador.DarFollowUnfollowDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.DarLikeDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.IdbyUserDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.MascotaDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.Deserializador.followsSelfDeserializador;
 import com.example.lucia.mascotasproyecto.restApi.EndpointsApi;
+import com.example.lucia.mascotasproyecto.restApi.model.FollowResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.LikeResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.MascotaResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.UserInstagramResponse;
@@ -60,6 +62,16 @@ public Gson construyeGsonDeserializadorMediaRecent(){
         return gsonBuilder.create();
 
     }
+
+    public Gson construyeGsonDeserializadorFollowUnfollow (){
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(FollowResponse.class, new DarFollowUnfollowDeserializador());
+
+        return gsonBuilder.create();
+
+    }
+
 }
+
 
 

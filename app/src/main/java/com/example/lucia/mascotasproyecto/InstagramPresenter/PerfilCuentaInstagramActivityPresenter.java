@@ -66,6 +66,11 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
                 idUsername = IDUSERNAME;
                 insertarLikeInstagrambymedia(idMedia);
                 obtenerMediosRecientesbyId(idUsername);
+            }else {
+                if (MainActivity.ORIGEN == 3){
+                    acciones_notificacion_wearables();
+                }
+
             }
         }
     }
@@ -86,9 +91,37 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
                 idUsername = IDUSERNAME;
                 insertarLikeInstagrambymedia(idMedia);
                 obtenerMediosRecientesbyId(idUsername);
+            }else {
+                if (MainActivity.ORIGEN == 3){
+//                    acciones_notificacion_wearables();
+                    Username = MainActivity.USERNAME;
+                    obtenerIdbyUsername(Username);
+                }
+
             }
         }
      }
+
+
+     public void acciones_notificacion_wearables (){
+        String ACCION_KEY1 = "VER_PERFIL";
+        String ACCION_KEY3 = "VER_USUARIO_DIO_LIKE";
+
+        if (ACCION_KEY1.equals(MainActivity.ACCION_PULSADA)){
+            MainActivity.USERNAME = "zach_dog_24";
+            Username = MainActivity.USERNAME;
+            obtenerIdbyUsername(Username);
+            Toast.makeText(context, "Veras tu perfil ", Toast.LENGTH_SHORT).show();
+        }else {
+            if (ACCION_KEY3.equals(MainActivity.ACCION_PULSADA)){
+                MainActivity.USERNAME = "perritoconnor";
+                Username = MainActivity.USERNAME;
+                obtenerIdbyUsername(Username);
+                Toast.makeText(context, "Usuario que dio like ", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
 
     @Override
     public void obtenerMascotasCuentaInstagram() {
@@ -243,8 +276,16 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
 
     public void toqueLikeAnimal(){
         Log.d("TOQUE LIKE ANIMAL", "true");
+        // OreoTheCat     = -KopfQiW6JdP2QRPPGim
+        // perritoconnor  = -Kp81-bquo89-DjRC-2P
+        // zach_dog_24    = -KopfXH9ojndvoWrDTcN
 
-        UsuarioResponse usuarioResponse = new UsuarioResponse("-KopfQiW6JdP2QRPPGim","",MainActivity.CUENTA_INSTAGRAM);
+// PERRITOCONNOR A ZAC_DOG_24
+        UsuarioResponse usuarioResponse = new UsuarioResponse("-KopfXH9ojndvoWrDTcN","",MainActivity.CUENTA_INSTAGRAM);
+
+// ZAC_DOG_24 A PERRITOCONNNOR
+
+//        UsuarioResponse usuarioResponse = new UsuarioResponse("-Kp81-bquo89-DjRC-2P","",MainActivity.CUENTA_INSTAGRAM);
 
         RestApiAdapterFirebase restApiAdapterFirebase = new RestApiAdapterFirebase();
         EndpointsFirebase endpoints = restApiAdapterFirebase.establecerConexionRestApi();
