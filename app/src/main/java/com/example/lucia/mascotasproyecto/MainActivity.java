@@ -42,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
 // Origen = 1 es para mostrar la media de una cuenta instagram por Username y
 // Origen = 2 es para insertan primero un like en la cuenta Instagram y luego muestra la media de la cuenta Instagram
+// Origen = 3 es para mostrar una notificacion en el mobil y en el wear con diferentes acciones
 
     public static int ORIGEN = 1;
     public static String CUENTA_INSTAGRAM = "perritoconnor";
+    //public static String CUENTA_INSTAGRAM = "zach_dog_24";
 
     public static String CUENTA_EMISORA = "perritoconnor";
     public static String CUENTA_RECEPTORA = "zach_dog_24";

@@ -3,6 +3,7 @@ package com.example.lucia.mascotasproyecto.AccionesWear;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ import com.example.lucia.mascotasproyecto.restApi.model.LikeResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,20 +31,36 @@ import static com.example.lucia.mascotasproyecto.MainActivity.IDUSERNAME;
 
 public class FollowUnfollow extends BroadcastReceiver{
 
-    Context context;
+
+    private Context classcontext;
+    private String searchUserName;
+    private String foundUserId;
+    private String tempFollow;
+
     @Override
     public void onReceive(Context context, Intent intent) {
         MainActivity.USERNAME = "zach_dog_24";
         String ACCION_KEY = "FOLLOW_UNFOLLOW";
         String accion = intent.getAction();
-        MainActivity.ACCION_PULSADA = accion;
+
+        classcontext = context;
+
         if (ACCION_KEY.equals(accion)){
-            DarFollowUnfollow();
-             Toast.makeText(context, "Diste Follow Unfollow a " + MainActivity.USERNAME, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Diste Follow Unfollow a " + MainActivity.USERNAME, Toast.LENGTH_SHORT).show();
+
+            Bundle bundle = intent.getExtras();
+            String userName = bundle.getString("username");
+            DarFollowUnfollow(userName, "follow", classcontext);
+
         }
     }
-    public void DarFollowUnfollow () {
-        MainActivity.USERNAME = "zach_dog_24";
+    public void DarFollowUnfollow (String userName, String follow, final Context classcontext) {
+
+        searchUserName = userName;
+        tempFollow = follow;
+
+        MainActivity.USERNAME = userName;
+
         MainActivity.IDUSERNAME = "5032752476";
         String idUser = MainActivity.IDUSERNAME;
         MainActivity.ORIGEN = 3;
@@ -51,7 +70,7 @@ public class FollowUnfollow extends BroadcastReceiver{
         // FOLLOW O CON UNFOLLOW
 
         String url;
-        url = ConstantesRestApi.KEY1_GET_RELATIONSHIP + idUser + ConstantesRestApi.KEY2_POST_RELATIONSHIP;
+        url = ConstantesRestApi.KEY1_GET_RELATIONSHIP + idUser + ConstantesRestApi.KEY2_GET_RELATIONSHIP;
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonfollowunfollow = restApiAdapter.construyeGsonDeserializadorFollowUnfollow();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonfollowunfollow);
@@ -67,37 +86,34 @@ public class FollowUnfollow extends BroadcastReceiver{
                 } else if (outgoing_status.equals("none")) {
                     action = "follow";
                 }
-                cambiarrelationshipconPOST(action);
+                cambiarrelationshipconPOST(action, classcontext);
             }
 
 
             @Override
             public void onFailure(Call<FollowResponse> call, Throwable t) {
-                Toast.makeText(context, "!Algo pasó en la conexión¡ Intenta de nuevo ", Toast.LENGTH_LONG).show();
+                Toast.makeText(classcontext, "!Algo pasó en la conexión¡ Intenta de nuevo ", Toast.LENGTH_LONG).show();
                 Log.e("FALLO LA CONEXION ", t.toString());
             }
         });
     }
 
 
-    public void cambiarrelationshipconPOST(String action){
+    public void cambiarrelationshipconPOST(String action, final Context classcontext){
 
         String idUser = MainActivity.IDUSERNAME;
-       // POST  https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=follow
+
+        // POST  https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=follow
 
         String url;
-        url = ConstantesRestApi.KEY1_POST_RELATIONSHIP + idUser + ConstantesRestApi.KEY2_POST_RELATIONSHIP;
-                if (action.equals("follow")) {
- //                   url = url + ConstantesRestApi.KEY3_POST_RELATIONSHIP_FOLLOW ;
-                 }
-                else {
- //                   url = url + ConstantesRestApi.KEY4_POST_RELATIONSHIP_UNFOLLOW;
-                 }
+        url = String.format(ConstantesRestApi.KEY2_POST_RELATIONSHIP, idUser);
 
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonfollowunfollow = restApiAdapter.construyeGsonDeserializadorFollowUnfollow();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonfollowunfollow);
-        Call<FollowResponse> followResponseCall = endpointsApi.getfollowunfollow(url);
+
+        Call<FollowResponse> followResponseCall = endpointsApi.postfollowunfollow(url, action);
+
         followResponseCall.enqueue(new Callback<FollowResponse>() {
             @Override
             public void onResponse(Call<FollowResponse> call, Response<FollowResponse> response) {
@@ -108,7 +124,7 @@ public class FollowUnfollow extends BroadcastReceiver{
             @Override
             public void onFailure(Call<FollowResponse> call, Throwable t) {
 
-                Toast.makeText(context, "!Algo pasó en la conexión¡ Intenta de nuevo ", Toast.LENGTH_LONG).show();
+                Toast.makeText(classcontext, "!Algo pasó en la conexión¡ Intenta de nuevo ", Toast.LENGTH_LONG).show();
                 Log.e("FALLO LA CONEXION ", t.toString());
             }
         });

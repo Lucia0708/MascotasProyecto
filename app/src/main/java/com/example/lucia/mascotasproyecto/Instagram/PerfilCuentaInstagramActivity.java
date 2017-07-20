@@ -23,8 +23,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import static com.example.lucia.mascotasproyecto.Notificaciones.NotificationService.ACCION_ENVIADA;
-
 public class PerfilCuentaInstagramActivity extends AppCompatActivity implements IPerfilCuentaInstagramActivityView {
 
     private ImageView ivImagenPerfilInst;
@@ -49,14 +47,14 @@ public class PerfilCuentaInstagramActivity extends AppCompatActivity implements 
         //habiliatar la navegacion de regreso al padre
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Bundle parametros = getIntent().getExtras();
-
-        String accion = parametros.getString(ACCION_ENVIADA);
-        MainActivity.ACCION_PULSADA = accion;
-
-
-     //   MainActivity.USERNAME = parametros.getString(getResources().getString(R.string.pUsername));
-      //  MainActivity.IDUSERNAME = parametros.getString(getResources().getString(R.string.pIdUsername));
+        if (MainActivity.ORIGEN == 3) {
+            if (getIntent().getAction().equals("VER_PERFIL")) {
+                MainActivity.ACCION_PULSADA = "VER_PERFIL";
+            }
+            if (getIntent().getAction().equals("VER_USUARIO_DIO_LIKE")) {
+                MainActivity.ACCION_PULSADA = "VER_USUARIO_DIO_LIKE";
+            }
+        }
 
         ivImagenPerfilInst = (ImageView) findViewById(R.id.ivImagenPerfilInst);
         tvNombreMascotaInst = (TextView) findViewById(R.id.tvNombreMascotaInst);

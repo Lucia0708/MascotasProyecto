@@ -7,6 +7,8 @@ import com.example.lucia.mascotasproyecto.restApi.model.MascotaResponse;
 import com.example.lucia.mascotasproyecto.restApi.model.UserInstagramResponse;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -55,7 +57,8 @@ public interface EndpointsApi {
 // https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=follows
 // https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=unfollows
 
+    @FormUrlEncoded
     @POST
-    public Call<FollowResponse> postfollowunfollow(@Url String url);
+    public Call<FollowResponse> postfollowunfollow(@Url String url, @Field("action") String action);
 
 }

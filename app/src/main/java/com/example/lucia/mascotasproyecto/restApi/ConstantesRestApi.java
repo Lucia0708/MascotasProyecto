@@ -60,13 +60,11 @@ public final class ConstantesRestApi {
     public static final String KEY1_GET_RELATIONSHIP = "users/";
     public static final String KEY2_GET_RELATIONSHIP = "/relationship" + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
-    // POST https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=follow
-    // POST https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN&action=unfollow
+    // POST https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
     //Este Endpoint da follow y unfollow (a la persona que raiteo tu foto)
 
 
-    public static final String KEY1_POST_RELATIONSHIP = "users/";
-    public static final String KEY2_POST_RELATIONSHIP = "/relationship" + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
-    public static final String KEY3_POST_RELATIONSHIP_FOLLOW = "&action=follow";
-    public static final String KEY4_POST_RELATIONSHIP_UNFOLLOW = "&action=unfollow";
+    public static final String KEY1_POST_RELATIONSHIP = "users/%s/relationship";
+    public static final String KEY2_POST_RELATIONSHIP = KEY1_POST_RELATIONSHIP + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
+
 }

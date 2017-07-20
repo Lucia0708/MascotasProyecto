@@ -93,7 +93,7 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
                 obtenerMediosRecientesbyId(idUsername);
             }else {
                 if (MainActivity.ORIGEN == 3){
-//                    acciones_notificacion_wearables();
+                   acciones_notificacion_wearables();
                     Username = MainActivity.USERNAME;
                     obtenerIdbyUsername(Username);
                 }
@@ -108,16 +108,16 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
         String ACCION_KEY3 = "VER_USUARIO_DIO_LIKE";
 
         if (ACCION_KEY1.equals(MainActivity.ACCION_PULSADA)){
-            MainActivity.USERNAME = "zach_dog_24";
+            MainActivity.USERNAME = "perritoconnor";
             Username = MainActivity.USERNAME;
+            Toast.makeText(context, "Veras tu perfil " + Username, Toast.LENGTH_SHORT).show();
             obtenerIdbyUsername(Username);
-            Toast.makeText(context, "Veras tu perfil ", Toast.LENGTH_SHORT).show();
         }else {
             if (ACCION_KEY3.equals(MainActivity.ACCION_PULSADA)){
-                MainActivity.USERNAME = "perritoconnor";
+                MainActivity.USERNAME = "zach_dog_24";
                 Username = MainActivity.USERNAME;
+                Toast.makeText(context, "Usuario que dio like " + Username, Toast.LENGTH_SHORT).show();
                 obtenerIdbyUsername(Username);
-                Toast.makeText(context, "Usuario que dio like ", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -285,7 +285,7 @@ public class PerfilCuentaInstagramActivityPresenter implements IPerfilCuentaInst
 
 // ZAC_DOG_24 A PERRITOCONNNOR
 
-//        UsuarioResponse usuarioResponse = new UsuarioResponse("-Kp81-bquo89-DjRC-2P","",MainActivity.CUENTA_INSTAGRAM);
+//       UsuarioResponse usuarioResponse = new UsuarioResponse("-Kp81-bquo89-DjRC-2P","",MainActivity.CUENTA_INSTAGRAM);
 
         RestApiAdapterFirebase restApiAdapterFirebase = new RestApiAdapterFirebase();
         EndpointsFirebase endpoints = restApiAdapterFirebase.establecerConexionRestApi();

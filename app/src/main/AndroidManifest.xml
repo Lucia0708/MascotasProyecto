@@ -87,20 +87,20 @@
             </intent-filter>
         </service>
 
-        <receiver android:name=".AccionesWear.VerPerfil">
+        <receiver android:name=".AccionesWear.VerPerfil" android:enabled="true">
             <intent-filter>
                 <action android:name="VER_PERFIL"/>
 
             </intent-filter>
 
         </receiver>
-        <receiver android:name=".AccionesWear.VerUsuarioDioLike">
+        <receiver android:name=".AccionesWear.VerUsuarioDioLike" android:enabled="true">
             <intent-filter>
                 <action android:name="VER_USUARIO_DIO_LIKE"/>
             </intent-filter>
 
         </receiver>
-        <receiver android:name=".AccionesWear.FollowUnfollow">
+        <receiver android:name=".AccionesWear.FollowUnfollow" android:enabled="true">
             <intent-filter>
                 <action android:name="FOLLOW_UNFOLLOW"/>
             </intent-filter>
